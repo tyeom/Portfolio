@@ -35,5 +35,5 @@ jobs:
         ACCESS_TOKEN: $
         BASE_BRANCH: development # The branch the action should deploy from.
         BRANCH: master # The branch the action should deploy to.
-        FOLDER: build/wwwroot # The folder the action should deploy.
+        FOLDER: wwwroot # The folder the action should deploy.
         SINGLE_COMMIT: true

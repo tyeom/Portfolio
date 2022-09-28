@@ -22,6 +22,7 @@ jobs:
       working-directory: Blazor_wasm_Test/Blazor_wasm_Test
     - name: Build
       run: dotnet build --no-restore
+      working-directory: Blazor_wasm_Test/Blazor_wasm_Test
     - name: Test
       run: dotnet test --no-build --verbosity normal
       working-directory: Blazor_wasm_Test/Blazor_wasm_Test

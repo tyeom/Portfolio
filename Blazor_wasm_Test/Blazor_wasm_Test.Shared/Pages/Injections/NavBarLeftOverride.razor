@@ -1,0 +1,14 @@
+﻿@page "/injections/navbar-left-override"
+@inject NavBarLeftInjectableMenu menu
+@menu.SetContent(@<NavBarLeftMenu />,true)
+<ContentHeader>
+    <Header>
+        <Blazor.AdminLte.PageTitle Title="Navbar Left Override" />
+    </Header>
+</ContentHeader>
+<ContentMain>
+    <Card>
+        <Title><CardTitle>Title</CardTitle></Title>
+        <Body>Contents</Body>
+    </Card>
+</ContentMain>

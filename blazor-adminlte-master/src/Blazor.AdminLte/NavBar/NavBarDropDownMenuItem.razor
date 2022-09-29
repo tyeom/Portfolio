@@ -1,0 +1,8 @@
+﻿@namespace Blazor.AdminLte
+<a href="#" class="dropdown-item">
+    @ChildContent
+</a>
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}

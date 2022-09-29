@@ -1,0 +1,23 @@
+﻿@inject NavigationManager nav  
+@page "/About"
+    <PageTitle Title="About" />
+    <Overlay>
+        <NavBarMenuItem OnClick="GoHome">Home</NavBarMenuItem>
+        <ContentMain>
+
+
+
+                    <Row>
+                        <Column Classes="col._"></Column>
+                        <Column Classes="col._"><img src="dist/img/AdminLTELogo.png" />AdminLTE</Column>
+                        <Column Classes="col._"></Column>
+                    </Row>
+
+        </ContentMain>
+    </Overlay>
+@code {
+    private void GoHome(Tuple<INavBarMenuItem,MouseEventArgs> args)
+    {
+        nav.NavigateTo("/Home");
+    }
+}

@@ -1,0 +1,31 @@
+﻿@namespace Blazor.AdminLte
+<div @ref="CardReference" @attributes="@Attributes">
+    <div @attributes="HeaderAttributes">
+        @Title
+        <CascadingValue Name="Parent" Value="this">
+            <CascadingValue Name="ToolOptions" Value="ToolOptions">
+                @Header
+            </CascadingValue>
+        </CascadingValue>
+    </div>
+    <div class="card-body">
+         @Body
+    </div>
+    @if (Footer != null)
+    {
+    <div class="card-footer">
+        @Footer
+    </div>
+    }
+    @if (LoadingState != LoadingState.None)
+    {
+        <div class="@(LoadingState.GetDescription<StyleAttribute>())">
+            <i class="@LoadingStateIcon @(LoadingStateIconSpinning ? "fa-spin" : "")"></i>
+        </div>
+    }
+</div>
+
+@code {
+
+
+}

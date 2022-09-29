@@ -1,0 +1,17 @@
+﻿@page "/extra-info"
+@inject NavBarLeftInjectableMenu menu
+
+@menu.SetContent(@<CustomMenu />            )
+<ContentHeader>
+    <Header>
+        <PageTitle Title="Extra Info Page" />
+    </Header>
+</ContentHeader>
+<ContentMain>
+    <Card>
+        <Title><CardTitle>Title</CardTitle></Title>
+        <Body>
+            Extra Info
+        </Body>
+    </Card>
+</ContentMain>

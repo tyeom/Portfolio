@@ -1,0 +1,20 @@
+﻿@page "/starter-pages/active-page"
+@inject NavBarLeftInjectableMenu menu
+@menu.SetContent(@<ActivePageMenu />, true)
+<ContentHeader>
+    <Header>
+        <Blazor.AdminLte.PageTitle Title="Active Page" />       
+    </Header>
+    <BreadcrumbContainer>
+        <Breadcrumb>
+            <BreadcrumbItem Link="/">Home</BreadcrumbItem>
+            <BreadcrumbItem Active>Active Page</BreadcrumbItem>
+        </Breadcrumb>
+    </BreadcrumbContainer>
+</ContentHeader>
+<ContentMain>
+    <Card>
+        <Title><CardTitle>Some active page content</CardTitle></Title>
+        <Body>Contents</Body>
+    </Card>
+</ContentMain>

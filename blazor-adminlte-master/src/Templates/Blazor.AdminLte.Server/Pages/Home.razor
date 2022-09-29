@@ -1,0 +1,18 @@
+﻿@page "/"
+@page "/Home"
+@inject NavBarLeftInjectableMenu menu
+
+@menu.SetContent(@<HomeMenu />)
+<ContentHeader>
+    <Header>
+        <PageTitle Title="Home" />
+    </Header>
+</ContentHeader>
+<ContentMain>
+    <Card>
+        <Title><CardTitle>Title</CardTitle></Title>
+        <Body>
+            Contents
+        </Body>
+    </Card>
+</ContentMain>

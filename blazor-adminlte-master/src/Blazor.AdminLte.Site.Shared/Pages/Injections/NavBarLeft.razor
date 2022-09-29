@@ -1,0 +1,14 @@
+﻿@page "/injections/navbar-left"
+@inject NavBarLeftInjectableMenu menu
+@menu.SetContent(@<NavBarLeftMenu />)
+<ContentHeader>
+    <Header>
+        <Blazor.AdminLte.PageTitle Title="NavBar Left" />
+    </Header>
+</ContentHeader>
+<ContentMain>
+    <Card>
+        <Title><CardTitle>Title</CardTitle></Title>
+        <Body>Contents</Body>
+    </Card>
+</ContentMain>

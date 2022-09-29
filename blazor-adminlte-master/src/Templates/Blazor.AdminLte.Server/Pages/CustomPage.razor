@@ -1,0 +1,17 @@
+﻿@page "/custom-page"
+@inject NavBarLeftInjectableMenu menu
+
+@menu.SetContent(@<CustomMenu />,true            )
+<ContentHeader>
+    <Header>
+        <PageTitle Title="Custom Page" />
+    </Header>
+</ContentHeader>
+<ContentMain>
+    <Card>
+        <Title><CardTitle>Title</CardTitle></Title>
+        <Body>
+            Contents
+        </Body>
+    </Card>
+</ContentMain>

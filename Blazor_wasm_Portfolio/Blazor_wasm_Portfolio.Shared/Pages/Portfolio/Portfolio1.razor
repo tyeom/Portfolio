@@ -1,0 +1,117 @@
+﻿@page "/portfolio/portfolio1"
+<ContentHeader>
+    <Header>
+        <Blazor.AdminLte.PageTitle Title="포토폴리오 - 무인주문 키오스크" />
+    </Header>
+</ContentHeader>
+<ContentMain>
+    <Card>
+        <Title>
+            <CardTitle><h6 class="font-weight-bold">사용 기술</h6></CardTitle></Title>
+        <Body>
+            <Table>
+                <TableHead>
+                    <TableRow>
+                        <TableHeadCell>#</TableHeadCell>
+                        <TableHeadCell>Task</TableHeadCell>
+                        <TableHeadCell>참여도</TableHeadCell>
+                        <TableHeadCell></TableHeadCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    <TableRow>
+                        <TableCell>1.</TableCell>
+                        <TableCell>WPF</TableCell>
+                        <TableCell><Progress Percentage="100" Classes="progress.danger" /></TableCell>
+                        <TableCell><Badge Classes="badge.right.danger">100%</Badge></TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>2.</TableCell>
+                        <TableCell>ASP.NET Core (모니터링 서버 SignalR)</TableCell>
+                        <TableCell><Progress Percentage="100" Classes="progress.warning" /></TableCell>
+                        <TableCell><Badge Classes="badge.right.warning">100%</Badge></TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>3.</TableCell>
+                        <TableCell>C++ (OpenCV 얼굴인식)</TableCell>
+                        <TableCell><Progress Percentage="20" Classes="progress.info" /></TableCell>
+                        <TableCell><Badge Classes="badge.right.info">20%</Badge></TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>4.</TableCell>
+                        <TableCell>Node.js (모니터링 서버 Web RestFul API)</TableCell>
+                        <TableCell><Progress Percentage="20" Classes="progress.info" /></TableCell>
+                        <TableCell><Badge Classes="badge.right.info">20%</Badge></TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>5.</TableCell>
+                        <TableCell>MSSQL (모니터링 서버 데이터)</TableCell>
+                        <TableCell><Progress Percentage="100" Classes="progress.success" /></TableCell>
+                        <TableCell><Badge Classes="badge.right.success">100%</Badge></TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
+        </Body>
+    </Card>
+
+
+    <Card>
+        <Title><CardTitle><h6 class="font-weight-bold">개요</h6></CardTitle></Title>
+        <Body>
+            <p>
+                매장형 통합 주문 관리 시스템 플랫폼 구축으로 그 중에서 무인 주문 KIOSK와 매장용 POS 및 DID를 개발 담당 하였습니다.<br/>
+                특히 KIOSK 사용자의 얼굴을 파악해 최근 이용했던 주문의 정보를 먼저 표출해서 원 터치로 바로 주문이 가능하도록 하여 편리성을 극대화 시켰습니다.<br/>
+                여러 매장에서 사용 되는 KIOSK와 매장 실내 자동화 관리를 통합 (실내 온도, 자동문 개방 등) 할 수 있는 매니저 솔루션을 만들어 내부 운영 업무를 향상 시키고 쾌적한 매장을 운영할 수 있도록 처리 하였습니다.
+            </p>
+        </Body>
+    </Card>
+
+    <Card>
+        <Title><CardTitle><h6 class="font-weight-bold">담당파트</h6></CardTitle></Title>
+        <Body>
+            <p>
+                KIOSK, 매장용 POS, DID 전반 UI/UX 개발 담당 및 전체 구조 설계<br />
+                KIOSK 전체, 매장용 POS 전체 기능 신규 기능 추가 및 유지보수<br />
+                키오스크 기기를 통합적으로 긴급 업데이트, 재시작, 브레이크 타임 적용 등 컨트롤러 기능의 RestFul Web API Back End 서버 담당 (Node.js Express)<br />
+                KIOSK 와 리니어 장비 연동 (휴먼인터페이스 HID 통신)<br />
+                KIOSK 사용자 얼굴 인식 처리<br />
+                별개 얼굴인식 프로세스와 KIOSK 프로세스 간 Named pipe 통신 처리<br />
+            </p>
+        </Body>
+    </Card>
+
+    <Card>
+        <Title><CardTitle><h6 class="font-weight-bold">어려웠던 점 or 고민</h6></CardTitle></Title>
+        <Body>
+            <p>
+                1.<br/>
+                KIOSK 대기 화면에서 카메라로 사용자 얼굴인식을 처리하는대에 있어 퍼포먼스 영향에 대해 고려해야 하는 부분이 있었습니다.<br />
+                얼굴인식 과정이 오래 걸리는 부분과 상시로 카메라가 얼굴 영상 처리를 하고 있는 과정에서 실제 KIOSK 프로세스상 부하가 걸리는 부분 등이 우선적으로 해결 되어야 했습니다.<br />
+                주문 특성상 회전율이 빨라야 하므로 사용자가 KIOSK이용시 느리다는 반응은 매출과도 직결되어 있는 부분이라 고민이 컸는데 이런 부분은 하나의 프로세스로 처리 하는 것 보단 프로세스를 별개로 나뉘어 멀티 프로세스로 처리해서 서로 통신 처리 되도록 처리 하는 것이 성능면에서 좋을거라 판단하고 프로토타입의 샘플 툴을 만들어 테스트 하고 도입해서 해결했습니다.<br /><br />
+
+                2.<br />
+                매장별 KIOSK를 실시간 모니터링하고 상태 관리 매니저 솔루션을 개발하는데 있어 기존 서버와 통신 하는 방식이 C++ 기반의 raw TCP로 보다 복잡한 형식으로 되어 있었습니다.<br />
+                윈도우 데스크톱 앱에서만 사용되면 해당 프로토콜에 맞춰 개발하면 되었지만 모바일 또는 웹 환경에서도 관리 할 수 있도록 하는 요구사항에 있어 위 통신 방식은 사용할 수 없다고 판단하여
+                전반적으로 Web RestFul API기반 및 SingnalR 라이브러리를 사용한 웹 소켓 방식의 RPC통신을 사용하는 서버를 새롭게 개발해서 해결한 경험이 있습니다.
+
+                3.<br />
+                전동으로 높 낮이 조절이 가능한 리니어 장비를 연동하는데 있어 한번도 처리해 보지 않은 방식이라서 처음에 당황스러웠습니다.<br/>
+                확인해 보니 COM포트 시리얼통신이 아닌 HID 휴먼인터페이스 장치로 잡히면서 Win32 API를 통해 장비 연동을 해야 했습니다.<br /><br/>
+
+                다행이 일정으로는 여유가 있어 관련 문서를 찾아보고 데모 프로그램을 분석하면서 제공 되는 SDK문서 프로토콜에 맞게 장비 연동을 해결할 수 있었습니다.<br/>
+                이 기회로 장비 연동에 있어 잘 모르고 있는 것에 대해 배워가는 과정이 되었습니다.
+            </p>
+        </Body>
+    </Card>
+
+    <Card>
+        <Title><CardTitle><h6 class="font-weight-bold">스크린샷</h6></CardTitle></Title>
+        <Body>
+            <p>
+                해당 사이트에서 비공개
+            </p>
+        </Body>
+    </Card>
+
+
+</ContentMain>

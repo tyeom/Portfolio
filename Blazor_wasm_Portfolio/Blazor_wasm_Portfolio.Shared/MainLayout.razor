@@ -1,0 +1,129 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@inject ILayoutManager layoutManager
+@inject NavBarLeftInjectableMenu navBarLeftInjectableMenu
+<NavBar>
+    <NavBarLeft>
+        @if (!navBarLeftInjectableMenu.OverrideParentContent)
+        {
+            <NavBarMenuItem Link="/">Home</NavBarMenuItem>
+            <NavBarMenuItem OnClick="HandleContact">Contact</NavBarMenuItem>
+
+            <!-- defaults to # -->
+        }
+        @navBarLeftInjectableMenu.content <!-- Injectable for custom menu content per page -->
+    </NavBarLeft>
+    <NavBarSearch></NavBarSearch>
+    <Player></Player>
+    
+</NavBar>
+<SideBarContainer>
+    <BrandLogo ImageEffect="ImageEffect.Circle" Link="https://blog.arong.info/Blazor_Portfolio" Logo="_content/Blazor_wasm_Portfolio.Shared/dist/img/Logo.jpg">
+        My portfolio
+    </BrandLogo>
+    <SideBar>
+        <!-- Sidebar user panel (optional) -->
+        <SideBarUserPanel ImageEffect="ImageEffect.Circle" Link="history/user-page" Elevation="Elevation.Three" UserImage="_content/Blazor_wasm_Portfolio.Shared/dist/img/my_profile.jpg">tyeom</SideBarUserPanel>
+        @*<SideBarSearch></SideBarSearch>*@
+    <SideBarMenu>
+            <SideBarTreeView Icon="fas fa-tree">
+            <Title>PORTFOLIO</Title>
+            <Items>
+                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio1">
+                    무인주문 키오스크
+                </SideBarMenuItem>
+                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio2">
+                    백신 중앙관리 솔루션
+                </SideBarMenuItem>
+                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio3">
+                    CCTV 관제센터 솔루션
+                </SideBarMenuItem>
+                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio4">
+                    빅데이터 처리 가시화
+                </SideBarMenuItem>
+                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio5">
+                    웹/모바일 2D 슈팅 게임
+                </SideBarMenuItem>
+                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio6">
+                    Clone 당근마켓
+                </SideBarMenuItem>
+                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio7">
+                    Clone 카카오톡
+                </SideBarMenuItem>
+                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio8">
+                    WPF Music Player
+                </SideBarMenuItem>
+                <SideBarMenuItem Icon="far fa-circle">
+                    개인 노트 App
+                </SideBarMenuItem>
+                <SideBarMenuItem Icon="far fa-circle">
+                    카카오톡 봇(AOS)
+                </SideBarMenuItem>
+            </Items>
+        </SideBarTreeView>
+
+            <SideBarTreeView Icon="far fa-user">
+            <Title>HISTORY</Title>
+            <Items>
+                <SideBarMenuItem Icon="far fa-circle" Link="history/resume">
+                    이력서
+                </SideBarMenuItem>
+                    <SideBarMenuItem Icon="far fa-circle" Link="history/experiences">
+                    상세 Experiences
+                </SideBarMenuItem>
+            </Items>
+        </SideBarTreeView>
+
+        <SideBarTreeView Icon="fas fa-tree">
+            <Title>과외 경험</Title>
+            <Items>
+                <SideBarMenuItem Icon="far fa-circle">
+                    1:1 온/오프 WPF 과외
+                </SideBarMenuItem>
+                <SideBarMenuItem Icon="far fa-circle">
+                    1:1 Flutter 과외
+                </SideBarMenuItem>
+            </Items>
+        </SideBarTreeView>
+    </SideBarMenu>
+    </SideBar>
+</SideBarContainer>
+<ContentWrapper>
+    @Body
+</ContentWrapper>
+
+
+<MainFooter>
+    <Default>
+        <strong>Copyright &copy; 2023 <a href="https://blog.arong.info/Portfolio">Arong By Blazor wasm</a>.</strong> All rights reserved.
+
+    </Default>
+    <Right>
+        Arong By Blazor wasm
+    </Right>
+</MainFooter>
+                   
+@code {
+    protected override void OnParametersSet()
+    {
+        // content = null; for refreshing custom menu injectables per page.
+        // no override; reset default to show parent menu content items.
+        navBarLeftInjectableMenu.SetContent(null, false);
+    }
+
+    private DateTime dt = DateTime.Now;
+
+    private void HandleContact(Tuple<INavBarMenuItem, MouseEventArgs> args)
+    {
+        NavigationManager.NavigateTo("contact/my-Contact");
+    }
+
+    protected override void OnAfterRender(bool isFirstRender)
+    {
+        layoutManager.IsFooterFixed = true;
+        layoutManager.IsNavBarFixed = true;
+        layoutManager.IsSideBarFixed = true;
+        base.OnAfterRender(isFirstRender);
+    }
+}

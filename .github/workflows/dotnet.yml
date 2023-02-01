@@ -19,21 +19,21 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: Blazor_wasm_Test/Blazor_wasm_Test
+      working-directory: Blazor_wasm_Portfolio/Blazor_wasm_Portfolio
     - name: Build
       run: dotnet build --no-restore
-      working-directory: Blazor_wasm_Test/Blazor_wasm_Test
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-      working-directory: Blazor_wasm_Test/Blazor_wasm_Test
+      working-directory: Blazor_wasm_Portfolio/Blazor_wasm_Portfolio
+    - name: portfolio
+      run: dotnet portfolio --no-build --verbosity normal
+      working-directory: Blazor_wasm_Portfolio/Blazor_wasm_Portfolio
     - name: Publish with dotnet
       run: dotnet publish --configuration Release --output build
-      working-directory: Blazor_wasm_Test/Blazor_wasm_Test
+      working-directory: Blazor_wasm_Portfolio/Blazor_wasm_Portfolio
     - name: Deploy to Github Pages
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         BASE_BRANCH: main # The branch the action should deploy from.
         BRANCH: master # The branch the action should deploy to.
-        FOLDER: Blazor_wasm_Test/Blazor_wasm_Test/build/wwwroot # The folder the action should deploy.
+        FOLDER: Blazor_wasm_Portfolio/Blazor_wasm_Portfolio/build/wwwroot # The folder the action should deploy.
         SINGLE_COMMIT: true

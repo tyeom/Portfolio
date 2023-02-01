@@ -1,0 +1,56 @@
+﻿@page "/portfolio/portfolio5"
+<ContentHeader>
+    <Header>
+        <Blazor.AdminLte.PageTitle Title="포토폴리오 - 웹/모바일 2D 슈팅 게임" />
+    </Header>
+</ContentHeader>
+<ContentMain>
+    <Card>
+        <Title>
+            <CardTitle><h6 class="font-weight-bold">사용 기술</h6></CardTitle>
+        </Title>
+        <Body>
+            <Table>
+                <TableHead>
+                    <TableRow>
+                        <TableHeadCell>#</TableHeadCell>
+                        <TableHeadCell>Task</TableHeadCell>
+                        <TableHeadCell>참여도</TableHeadCell>
+                        <TableHeadCell></TableHeadCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    <TableRow>
+                        <TableCell>1.</TableCell>
+                        <TableCell>Flutter</TableCell>
+                        <TableCell><Progress Percentage="100" Classes="progress.danger" /></TableCell>
+                        <TableCell><Badge Classes="badge.right.danger">100%</Badge></TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
+        </Body>
+    </Card>
+
+
+    <Card>
+        <Title><CardTitle><h6 class="font-weight-bold">개요</h6></CardTitle></Title>
+        <Body>
+            <p>
+                Flutter 미니멀리스트 게임 엔진인 flame를 사용하여 2DVertical Scrolling Game 게임 제작<br/><br/>
+
+                관련 github : <a href="https://github.com/tyeom/Flutter_flame_game" target="_blank">Flutter_flame_game</a>
+            </p>
+        </Body>
+    </Card>
+
+    <Card>
+        <Title><CardTitle><h6 class="font-weight-bold">스크린샷</h6></CardTitle></Title>
+        <Body>
+            <p>
+                <img src="https://user-images.githubusercontent.com/13028129/215686992-5d30925e-f903-4765-843c-62aba1f6775a.gif" />
+            </p>
+        </Body>
+    </Card>
+
+
+</ContentMain>

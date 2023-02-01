@@ -1,5 +1,5 @@
 # Blazor Webassembly Test
-Blazor Webassembly 테스트 저장소 입니다.
+Blazor Webassembly로 만들어진 포토폴리오 사이트 입니다.
 
 🛠️ Environment
 -
@@ -18,6 +18,6 @@ Blazor Webassembly 테스트 저장소 입니다.
 ***
 
 이 저장소는 Blazor Webassembly 웹 사이트가 GitHub Pages에 호스팅 되고 있으며 Actions으로 자동 빌드/배포 관리 되고 있습니다.<br/>
-호스팅 URL은 [https://blog.arong.info/Blazor_Test](https://blog.arong.info/Blazor_Test/) 입니다.<br/><br/>
+호스팅 URL은 [https://blog.arong.info/Portfolio](https://blog.arong.info/Portfolio/) 입니다.<br/><br/>
 
 Blazor wasm 관련 코드 테스트 및 학습 용도로 사용됩니다.

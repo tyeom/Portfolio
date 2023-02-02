@@ -23,8 +23,8 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
       working-directory: Blazor_wasm_Portfolio/Blazor_wasm_Portfolio
-    - name: portfolio
-      run: dotnet portfolio --no-build --verbosity normal
+    - name: Test
+      run: dotnet Test --no-build --verbosity normal
       working-directory: Blazor_wasm_Portfolio/Blazor_wasm_Portfolio
     - name: Publish with dotnet
       run: dotnet publish --configuration Release --output build

@@ -26,69 +26,86 @@
         <!-- Sidebar user panel (optional) -->
         <SideBarUserPanel ImageEffect="ImageEffect.Circle" Link="history/user-page" Elevation="Elevation.Three" UserImage="_content/Blazor_wasm_Portfolio.Shared/dist/img/my_profile.jpg">tyeom</SideBarUserPanel>
         @*<SideBarSearch></SideBarSearch>*@
-    <SideBarMenu>
+
+        <SideBarMenu>
             <SideBarTreeView Icon="fas fa-tree">
-            <Title>PORTFOLIO</Title>
-            <Items>
-                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio1">
-                    무인주문 키오스크
-                </SideBarMenuItem>
-                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio2">
-                    백신 중앙관리 솔루션
-                </SideBarMenuItem>
-                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio3">
-                    CCTV 관제센터 솔루션
-                </SideBarMenuItem>
-                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio4">
-                    빅데이터 처리 가시화
-                </SideBarMenuItem>
-                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio5">
-                    웹/모바일 2D 슈팅 게임
-                </SideBarMenuItem>
-                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio6">
-                    Clone 당근마켓
-                </SideBarMenuItem>
-                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio7">
-                    Clone 카카오톡
-                </SideBarMenuItem>
-                <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio8">
-                    WPF Music Player
-                </SideBarMenuItem>
-                <SideBarMenuItem Icon="far fa-circle">
-                    개인 노트 App
-                </SideBarMenuItem>
-                <SideBarMenuItem Icon="far fa-circle">
-                    카카오톡 봇(AOS)
-                </SideBarMenuItem>
-            </Items>
-        </SideBarTreeView>
+                <Title>PORTFOLIO</Title>
+                <Items>
+                    <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio1">
+                        무인주문 키오스크
+                    </SideBarMenuItem>
+                    <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio2">
+                        백신 중앙관리 솔루션
+                    </SideBarMenuItem>
+                    <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio3">
+                        CCTV 관제센터 솔루션
+                    </SideBarMenuItem>
+                    <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio4">
+                        빅데이터 처리 가시화
+                    </SideBarMenuItem>
+                    <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio5">
+                        웹/모바일 2D 슈팅 게임
+                    </SideBarMenuItem>
+                    <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio6">
+                        Clone 당근마켓
+                    </SideBarMenuItem>
+                    <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio7">
+                        Clone 카카오톡
+                    </SideBarMenuItem>
+                    <SideBarMenuItem Icon="far fa-circle" Link="portfolio/portfolio8">
+                        WPF Music Player
+                    </SideBarMenuItem>
+                    <SideBarMenuItem Icon="far fa-circle">
+                        개인 노트 App
+                    </SideBarMenuItem>
+                    <SideBarMenuItem Icon="far fa-circle">
+                        카카오톡 봇(AOS)
+                    </SideBarMenuItem>
+                </Items>
+            </SideBarTreeView>
+
+            <SideBarTreeView Icon="fa fa-address-card">
+                <Title>HISTORY</Title>
+                <Items>
+                    <SideBarMenuItem Icon="far fa-circle" Link="history/resume">
+                        이력서
+                    </SideBarMenuItem>
+                        <SideBarMenuItem Icon="far fa-circle" Link="history/experiences">
+                        상세 Experiences
+                    </SideBarMenuItem>
+                </Items>
+            </SideBarTreeView>
+
+            <SideBarTreeView Icon="far fa-plus-square">
+                <Title>과외 경험</Title>
+                <Items>
+                    <SideBarMenuItem Icon="far fa-circle" Link="tutoring/wpf">
+                        1:1 온/오프 WPF 과외
+                    </SideBarMenuItem>
+                    <SideBarMenuItem Icon="far fa-circle" Link="tutoring/flutter">
+                        1:1 Flutter 과외
+                    </SideBarMenuItem>
+                </Items>
+            </SideBarTreeView>
 
             <SideBarTreeView Icon="far fa-user">
-            <Title>HISTORY</Title>
-            <Items>
-                <SideBarMenuItem Icon="far fa-circle" Link="history/resume">
-                    이력서
-                </SideBarMenuItem>
-                    <SideBarMenuItem Icon="far fa-circle" Link="history/experiences">
-                    상세 Experiences
-                </SideBarMenuItem>
-            </Items>
-        </SideBarTreeView>
-
-        <SideBarTreeView Icon="fas fa-tree">
-            <Title>과외 경험</Title>
-            <Items>
-                <SideBarMenuItem Icon="far fa-circle">
-                    1:1 온/오프 WPF 과외
-                </SideBarMenuItem>
-                <SideBarMenuItem Icon="far fa-circle">
-                    1:1 Flutter 과외
-                </SideBarMenuItem>
-            </Items>
-        </SideBarTreeView>
-    </SideBarMenu>
+                <Title>CONTACT</Title>
+                <Items>
+                    <SideBarMenuItem Icon="far fa-circle">
+                        <NavLink @onclick="HandleGoToGitHub">GitHub</NavLink>
+                    </SideBarMenuItem>
+                    <SideBarMenuItem Icon="far fa-circle">
+                        <NavLink @onclick="HandleGoToTechBlog">Tech Blog</NavLink>
+                    </SideBarMenuItem>
+                    <SideBarMenuItem Icon="far fa-circle">
+                        <NavLink @onclick="HandleGoToBlog">Blog</NavLink>
+                    </SideBarMenuItem>
+                </Items>
+            </SideBarTreeView>
+        </SideBarMenu>
     </SideBar>
 </SideBarContainer>
+
 <ContentWrapper>
     @Body
 </ContentWrapper>
@@ -96,7 +113,7 @@
 
 <MainFooter>
     <Default>
-        <strong>Copyright &copy; 2023 <a href="https://blog.arong.info/Portfolio">Arong By Blazor wasm</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2023 <a href="https://blog.arong.info/Portfolio">tyeom By Portfolio</a>.</strong> All rights reserved.
 
     </Default>
     <Right>
@@ -117,6 +134,21 @@
     private void HandleContact(Tuple<INavBarMenuItem, MouseEventArgs> args)
     {
         NavigationManager.NavigateTo("contact/my-Contact");
+    }
+
+    private async Task HandleGoToGitHub()
+    {
+        await JS.InvokeVoidAsync("blazorOpen", new object[2] { "https://github.com/tyeom", "_blank" });
+    }
+
+    private async Task HandleGoToTechBlog()
+    {
+        await JS.InvokeVoidAsync("blazorOpen", new object[2] { "https://blog.arong.info", "_blank" });
+    }
+
+    private async Task HandleGoToBlog()
+    {
+        await JS.InvokeVoidAsync("blazorOpen", new object[2] { "https://arong.info", "_blank" });
     }
 
     protected override void OnAfterRender(bool isFirstRender)

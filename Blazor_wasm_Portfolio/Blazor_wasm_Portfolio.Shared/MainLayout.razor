@@ -138,17 +138,17 @@
 
     private async Task HandleGoToGitHub()
     {
-        await JS.InvokeAsync<object>("blazorOpen", new object[2] { "https://github.com/tyeom", "_blank" });
+        await JS.InvokeVoidAsync("blazorOpen", new object[2] { "https://github.com/tyeom", "_blank" });
     }
 
     private async Task HandleGoToTechBlog()
     {
-        await JS.InvokeAsync<object>("blazorOpen", new object[2] { "https://blog.arong.info", "_blank" });
+        await JS.InvokeVoidAsync("blazorOpen", new object[2] { "https://blog.arong.info", "_blank" });
     }
 
     private async Task HandleGoToBlog()
     {
-        await JS.InvokeAsync<object>("blazorOpen", new object[2] { "https://arong.info", "_blank" });
+        await JS.InvokeVoidAsync("blazorOpen", new object[2] { "https://arong.info", "_blank" });
     }
 
     protected override void OnAfterRender(bool isFirstRender)

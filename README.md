@@ -1,11 +1,15 @@
 # Blazor Webassembly Test
-Blazor Webassembly로 만들어진 포토폴리오 사이트 입니다.
+#### Blazor Webassembly로 만들어진 포토폴리오 사이트 입니다.
+#### Photofolio site made with Blazor Webassembly.
+
+***
 
 🛠️ Environment
 -
 
 - IDE : VS 2022
-- Language : C# (WPF)
+- Language : C#
+- Framework : ASP.NET Core Blazor WebAssembly
 
 
 📁 What's included?
@@ -13,7 +17,7 @@ Blazor Webassembly로 만들어진 포토폴리오 사이트 입니다.
 
 | Name| Framework | Build Status |
 | --- | --- | --- | 
-| **Blazor_wasm_Test**<br/>Blazor Webassembly project | ![NET6](https://img.shields.io/badge/.NET-6.0-red) | ![example workflow](https://github.com/tyeom/Blazor_Test/actions/workflows/dotnet.yml/badge.svg)
+| **Blazor_wasm_Portfolio**<br/>Blazor Webassembly project | ![NET6](https://img.shields.io/badge/.NET-6.0-red) | ![example workflow](https://github.com/tyeom/Portfolio/actions/workflows/dotnet.yml/badge.svg)
 
 ***
 

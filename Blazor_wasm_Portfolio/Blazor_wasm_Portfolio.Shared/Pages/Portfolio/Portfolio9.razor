@@ -1,0 +1,69 @@
+﻿@page "/portfolio/portfolio9"
+<ContentHeader>
+    <Header>
+        <Blazor.AdminLte.PageTitle Title="포토폴리오 - 공유 노트 App" />
+    </Header>
+</ContentHeader>
+<ContentMain>
+    <Card>
+        <Title>
+            <CardTitle><h6 class="font-weight-bold">사용 기술</h6></CardTitle>
+        </Title>
+        <Body>
+            <Table>
+                <TableHead>
+                    <TableRow>
+                        <TableHeadCell>#</TableHeadCell>
+                        <TableHeadCell>Task</TableHeadCell>
+                        <TableHeadCell>참여도</TableHeadCell>
+                        <TableHeadCell></TableHeadCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    <TableRow>
+                        <TableCell>1.</TableCell>
+                        <TableCell>Kotlin</TableCell>
+                        <TableCell><Progress Percentage="100" Classes="progress.danger" /></TableCell>
+                        <TableCell><Badge Classes="badge.right.danger">100%</Badge></TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>2.</TableCell>
+                        <TableCell>Node.js</TableCell>
+                        <TableCell><Progress Percentage="100" Classes="progress.warning" /></TableCell>
+                        <TableCell><Badge Classes="badge.right.warning">100%</Badge></TableCell>
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>3.</TableCell>
+                        <TableCell>MSSQL</TableCell>
+                        <TableCell><Progress Percentage="100" Classes="progress.purple" /></TableCell>
+                        <TableCell><Badge Classes="badge.right.purple">100%</Badge></TableCell>
+                    </TableRow>
+                </TableBody>
+            </Table>
+        </Body>
+    </Card>
+
+
+    <Card>
+        <Title><CardTitle><h6 class="font-weight-bold">개요</h6></CardTitle></Title>
+        <Body>
+            <p>
+                작성한 노트 및 일정 관리를 가족 또는 지인간 서로 공유하는 목적의 App 입니다.<br/>
+                노트에 Text, 사진 을 등록하고 별도의 일정 관리 기능을 통해 공통 노트 및 스케줄을 공유 할 수 있습니다.<br/>
+                공유된 노트와 일정은 푸시알림으로 서로 통보 받을 수 있으며, 일정 D-day N분전 알림을 받을 수 있습니다.
+            </p>
+        </Body>
+    </Card>
+
+    <Card>
+        <Title><CardTitle><h6 class="font-weight-bold">스크린샷</h6></CardTitle></Title>
+        <Body>
+            <p>
+                <img src="https://user-images.githubusercontent.com/13028129/221475258-b2f34244-aea6-4958-85f5-f811257c2051.png" /><br />
+                <img src="https://user-images.githubusercontent.com/13028129/221475248-9f719c1e-2181-41be-a033-9bcd61c5dfa1.png" />
+            </p>
+        </Body>
+    </Card>
+
+
+</ContentMain>
